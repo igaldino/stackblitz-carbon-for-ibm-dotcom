@@ -1,22 +1,31 @@
 {
-  "name": "ibmdotcom-web-components-footer-example",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Sample project for getting started with the Web Components from Carbon for IBM.com.",
-  "license": "Apache-2",
-  "main": "index.html",
+  "name": "ibm-shell",
+  "version": "0.0.0",
   "scripts": {
-    "clean": "rimraf node_modules dist .cache",
-    "start": "parcel index.html --port=9000 --no-hmr",
-    "build": "parcel build *.html --no-minify --public-url ./"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development"
   },
+  "private": true,
   "dependencies": {
-    "@carbon/ibmdotcom-web-components": "latest"
+    "@angular/animations": "^15.2.0",
+    "@angular/common": "^15.2.0",
+    "@angular/compiler": "^15.2.0",
+    "@angular/core": "^15.2.0",
+    "@angular/forms": "^15.2.0",
+    "@angular/platform-browser": "^15.2.0",
+    "@angular/platform-browser-dynamic": "^15.2.0",
+    "@angular/router": "^15.2.0",
+    "@carbon/ibmdotcom-web-components": "^1.34.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.12.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.10",
-    "@babel/plugin-transform-runtime": "^7.22.10",
-    "parcel-bundler": "1.12.3",
-    "rimraf": "^3.0.2"
+    "@angular-devkit/build-angular": "^15.2.9",
+    "@angular/cli": "~15.2.9",
+    "@angular/compiler-cli": "^15.2.0",
+    "typescript": "~4.8.0"
   }
 }
