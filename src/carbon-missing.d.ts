@@ -1,0 +1,1 @@
+declare module '@carbon/ibmdotcom-utilities/es/utilities/formatVideoCaption/formatVideoCaption.js';

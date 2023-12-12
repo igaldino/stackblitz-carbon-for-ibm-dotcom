@@ -1,13 +1,53 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+  <script>
+    var global = global || window;
+    var Buffer = Buffer || [];
+    var process = process || {
+      env: { DEBUG: undefined },
+      version: []
+    };
+
+    window.digitalData = {
+      page: {
+        pageInfo: {
+          language: 'en-US',
+          ibm: {
+            country: 'US',
+            siteID: 'Carbon for IBM.com',
+          },
+        },
+        isDataLayerReady: true,
+      },
+    };
+  </script>
+
   <meta charset="utf-8">
-  <title>IbmShell</title>
+  <title>Carbon for IBM.com</title>
   <base href="/">
+
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0"> <!-- Prevents caching on proxy servers -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
+  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v1.34.0/data-table.min.js"></script>
+  <script src="./assets/carbon-setup.js"></script>
+  <style type="text/css">
+    body {
+      font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+    }
+  </style>
+  <!-- The minimum prerequisite to use our locale selector -->
+  <link rel="alternate" hreflang="en-us" href="https://www.ibm.com/us-en/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.ibm.com" />
 </head>
+
 <body>
   <app-root></app-root>
 </body>

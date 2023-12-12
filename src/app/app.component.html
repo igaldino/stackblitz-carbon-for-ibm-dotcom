@@ -1,1 +1,137 @@
-<dds-dotcom-shell-container></dds-dotcom-shell-container>
+<bx-table
+  (bx-table-change-selection-all)="handleChangeSelectionAll($event)"
+  (bx-table-row-change-selection)="handleChangeSelection($event)">
+  <bx-table-head>
+    <bx-table-header-row selection-name="all">
+
+      <bx-table-header-cell>Name</bx-table-header-cell>
+      <bx-table-header-cell>Protocol</bx-table-header-cell>
+      <bx-table-header-cell>Port</bx-table-header-cell>
+      <bx-table-header-cell>Rule</bx-table-header-cell>
+      <bx-table-header-cell>Attached Groups</bx-table-header-cell>
+      <bx-table-header-cell>Status</bx-table-header-cell>
+    </bx-table-header-row>
+  </bx-table-head>
+  <bx-table-body>
+    <bx-table-row *ngFor="let i of fakeTable" data-row-id="1" selection-name="lb-1">
+      <bx-table-cell>{{ i.name }}</bx-table-cell>
+      <bx-table-cell>{{ i.protocol }}</bx-table-cell>
+      <bx-table-cell>{{ i.port }}</bx-table-cell>
+      <bx-table-cell>{{ i.rule }}</bx-table-cell>
+      <bx-table-cell>{{ i.group }}</bx-table-cell>
+      <bx-table-cell>{{ i.status }}</bx-table-cell>
+    </bx-table-row>
+  </bx-table-body>
+</bx-table>
+
+<bx-table
+  (bx-table-row-expando-toggled-all)="handleExpandRowAll($event)"
+  (bx-table-row-expando-toggled)="handleExpandRow($event)">
+
+  <bx-table-head>
+    <bx-table-header-expand-row expanded>
+      <bx-table-header-cell>Name</bx-table-header-cell>
+      <bx-table-header-cell>Protocol</bx-table-header-cell>
+      <bx-table-header-cell>Port</bx-table-header-cell>
+      <bx-table-header-cell>Rule</bx-table-header-cell>
+      <bx-table-header-cell>Attached Groups</bx-table-header-cell>
+      <bx-table-header-cell>Status</bx-table-header-cell>
+    </bx-table-header-expand-row>
+  </bx-table-head>
+  <bx-table-body>
+    <bx-table-expand-row data-row-id="1" expanded>
+      <bx-table-cell>Load Balancer 1</bx-table-cell>
+      <bx-table-cell>HTTP</bx-table-cell>
+      <bx-table-cell>80</bx-table-cell>
+      <bx-table-cell>Round Robin</bx-table-cell>
+      <bx-table-cell>Maureen's VM Groups</bx-table-cell>
+      <bx-table-cell>Active</bx-table-cell>
+    </bx-table-expand-row>
+    <bx-table-expanded-row colspan="7">
+      <bx-table
+        (bx-table-change-selection-all)="handleChangeSelectionAll($event)"
+        (bx-table-row-change-selection)="handleChangeSelection($event)">
+        <bx-table-head>
+          <bx-table-header-row selection-name="all">
+
+            <bx-table-header-cell>Name</bx-table-header-cell>
+            <bx-table-header-cell>Protocol</bx-table-header-cell>
+            <bx-table-header-cell>Port</bx-table-header-cell>
+            <bx-table-header-cell>Rule</bx-table-header-cell>
+            <bx-table-header-cell>Attached Groups</bx-table-header-cell>
+            <bx-table-header-cell>Status</bx-table-header-cell>
+          </bx-table-header-row>
+        </bx-table-head>
+        <bx-table-body>
+          <bx-table-row *ngFor="let i of fakeTable" data-row-id="1" selection-name="lb-1">
+            <bx-table-cell>{{ i.name }}</bx-table-cell>
+            <bx-table-cell>{{ i.protocol }}</bx-table-cell>
+            <bx-table-cell>{{ i.port }}</bx-table-cell>
+            <bx-table-cell>{{ i.rule }}</bx-table-cell>
+            <bx-table-cell>{{ i.group }}</bx-table-cell>
+            <bx-table-cell>{{ i.status }}</bx-table-cell>
+          </bx-table-row>
+        </bx-table-body>
+      </bx-table>
+    </bx-table-expanded-row>
+    <bx-table-expand-row data-row-id="2" expanded>
+      <bx-table-cell>Load Balancer 2</bx-table-cell>
+      <bx-table-cell>HTTP</bx-table-cell>
+      <bx-table-cell>80</bx-table-cell>
+      <bx-table-cell>Round Robin</bx-table-cell>
+      <bx-table-cell>Maureen's VM Groups</bx-table-cell>
+      <bx-table-cell>Active</bx-table-cell>
+    </bx-table-expand-row>
+    <bx-table-expanded-row colspan="7">
+      <h1>Expandable row content</h1>
+      <p>Description here</p>
+    </bx-table-expanded-row>
+    <bx-table-expand-row data-row-id="3" expanded>
+      <bx-table-cell>Load Balancer 3</bx-table-cell>
+      <bx-table-cell>HTTP</bx-table-cell>
+      <bx-table-cell>80</bx-table-cell>
+      <bx-table-cell>Round Robin</bx-table-cell>
+      <bx-table-cell>Maureen's VM Groups</bx-table-cell>
+      <bx-table-cell>Active</bx-table-cell>
+    </bx-table-expand-row>
+    <bx-table-expanded-row colspan="7">
+      <h1>Expandable row content</h1>
+      <p>Description here</p>
+    </bx-table-expanded-row>
+  </bx-table-body>
+</bx-table>
+
+<!--cds-table expandable batch-expansion is-selectable >
+  <cds-table-head>
+    <cds-table-header-row>
+      <cds-table-header-cell>Name</cds-table-header-cell>
+      <cds-table-header-cell>Status</cds-table-header-cell>
+    </cds-table-header-row>
+  </cds-table-head>
+  <cds-table-body>
+    <cds-table-row>
+      <cds-table-cell>Load Balancer 1</cds-table-cell>
+      <cds-table-cell>Disabled</cds-table-cell>
+    </cds-table-row>
+    <cds-table-expanded-row>
+      <h6>Expandable row content</h6>
+      <div>Description here</div>
+    </cds-table-expanded-row>
+    <cds-table-row>
+      <cds-table-cell>Load Balancer 2</cds-table-cell>
+      <cds-table-cell>Starting</cds-table-cell>
+    </cds-table-row>
+    <cds-table-expanded-row>
+      <h6>Expandable row content</h6>
+      <div>Description here</div>
+    </cds-table-expanded-row>
+    <cds-table-row>
+      <cds-table-cell>Load Balancer 3</cds-table-cell>
+      <cds-table-cell>Active</cds-table-cell>
+    </cds-table-row>
+    <cds-table-expanded-row>
+      <h6>Expandable row content</h6>
+      <div>Description here</div>
+    </cds-table-expanded-row>
+  </cds-table-body>
+</cds-table-->
